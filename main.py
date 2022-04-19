@@ -39,7 +39,7 @@ def getmv():
     frames()
     global poster
     mvname = nameentry.get()
-    link = 'http://www.omdbapi.com/?apikey=a40dba25&t=' + \
+    link = 'http://www.omdbapi.com/?apikey=[APIKEY]&t=' + \
         mvname  # Details of the preferred movie
     mvfetch = r.get(link)
     mvdict = json.loads(mvfetch.text)
@@ -64,7 +64,7 @@ def getmv():
 def boxoffice():
     global leftframe
     mvname = nameentry.get()
-    link = 'http://www.omdbapi.com/?apikey=a40dba25&t=' + \
+    link = 'http://www.omdbapi.com/?apikey=[APIKEY]&t=' + \
         mvname  # Details of the preferred movie
     mvfetch = r.get(link)
     mvdict = json.loads(mvfetch.text)
@@ -75,7 +75,7 @@ def boxoffice():
         amtc = amtc.split(',')
         amtc = ''.join(amtc)
         amtdoll = "Collections USD : "+amtdoll
-        cururl = 'https://api.getgeoapi.com/v2/currency/convert?api_key=d13a999a7cd173e87ccb60b8db6c05598ac23960&from=USD&to=INR&format=json&amount='+amtc
+        cururl = 'https://api.getgeoapi.com/v2/currency/convert?api_key=[APIKEY]&from=USD&to=INR&format=json&amount='+amtc
         inr = r.get(cururl)
         inrj = inr.json()
         rupstr = '₹'+inrj["rates"]['INR']['rate_for_amount']
