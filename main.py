@@ -7,6 +7,7 @@ import requests as r
 from tkinter import *
 from PIL import ImageTk, Image
 from io import BytesIO
+import psutil
 
 
 def frames():
